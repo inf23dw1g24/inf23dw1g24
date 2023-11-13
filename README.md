@@ -14,11 +14,12 @@ O projeto "Agenda Online" é uma aplicação web que permite aos utilizadores ge
 ### Recursos Disponíveis
 - **Utilizadores**: Gestão de contas.
 - **Eventos**: Adicionar, visualizar, modificar e remover eventos.
-- **Lembretes**: Configuração para eventos futuros.
 - **Categorias**: Classificação de eventos.
 
 ### Relação de Cardinalidade 1:n
-- Relacionamento de um para muitos entre utilizadores e eventos.
+Temos um relação de 1 para muitos, entre utilizadores e alendários.
+- Temos um relação de 1 para muitos, entre o  calendários e eventos.
+- Temos um relação de 1 para muitos, entre categoria e evento
 
 ### Representação em JSON
 - Dados da API enviados e recebidos em JSON.
