@@ -1,0 +1,7 @@
+FROM mysql:5.7-debian
+WORKDIR /app
+COPY database/setup.sh .
+COPY database/init_database.sql .
+RUN pwd && echo ""
+RUN ls -lisa && echo ""
+RUN ./setup.sh
