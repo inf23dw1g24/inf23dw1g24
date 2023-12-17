@@ -4,6 +4,8 @@ version: '3.1'
 services:
 
   db:
+    container_name: mysql
+    image: inf23dw1g24/mysql
     build:
       context: .
       dockerfile: ./dockerfile.database
@@ -15,6 +17,22 @@ services:
       - user-network
     ports:
       - "3306:3306"
+
+
+  api:
+    container_name: api
+    image: inf23dw1g24/api
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 9999:9999
+    networks:
+      - user-network
       
 networks:
   user-network:
